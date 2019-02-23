@@ -5,7 +5,7 @@ A JavaScript library for a Promise-like solution to callbacks
 ## Usage
 
 ```javascript
-const Promise = require("promise");
+const SimplePromise = require("simple-promise");
 
 const promise = new SimplePromise((resolve, reject) => {
   get("http://www.google.com", function(err, res) {
