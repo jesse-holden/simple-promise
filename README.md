@@ -11,14 +11,14 @@ const promise = new SimplePromise((resolve, reject) => {
   get("http://www.google.com", function(err, res) {
     if (err) reject(err);
     else resolve(res);
+  });
+})
+  .then(response => {
+    console.log(response);
   })
-    .then(response => {
-      console.log(response);
-    })
-    .catch(err => {
-      console.error(err);
-    });
-});
+  .catch(err => {
+    console.error(err);
+  });
 ```
 
 ## License
