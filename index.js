@@ -1,9 +1,9 @@
 module.exports = class SimplePromise {
-  constructor(executor, autorun = true) {
+  constructor(callback, autorun = true) {
     this.autorun = autorun;
     this.catchCallback = null;
     this.child = null;
-    this.executor = executor;
+    this.callback = callback;
     this.result = null;
 
     this.resolve = res => {
@@ -34,7 +34,7 @@ module.exports = class SimplePromise {
 
   run() {
     // Run the Promise's callback
-    this.executor(this.resolve, this.reject);
+    this.callback(this.resolve, this.reject);
   }
 
   catch(catchCallback) {
