@@ -8,7 +8,7 @@ A JavaScript library for a Promise-like solution to callbacks
 const SimplePromise = require("simple-promise");
 
 const promise = new SimplePromise((resolve, reject) => {
-  get("http://www.google.com", function(err, res) {
+  get("https://www.google.com/", (err, res) => {
     if (err) reject(err);
     else resolve(res);
   });
